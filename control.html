@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <title>ICnova</title>
+  <meta charset='utf-8' />
+  <style type="text/css">
+    h1 {text-align: center;}
+  </style>
+</head>
+<body>
+<h1>ICnova Web Controller</h1>
+
+  <h3>Buzzer</h3>
+  <hr>
+  <p>current state: <em>{{gpioFromFile}}:{{statusFromFile}}</em></p>
+  <hr>
+  <form action="/control" method="POST" enctype="multipart/form-data">
+      <!-- input type hidden, and value is the type of api call -->
+      <input type = "hidden" name ="api_type" value= "user">
+      <select name="api_state">
+        <option value="off" selected>OFF</option>
+        <option value="on">ON</option>
+        <option value="mode1">Mode 1</option>
+        <option value="mode2">Mode 2</option>
+        <option value="mode3">Mode 3</option>
+        <option value="mode4">Mode 4</option>
+        <option value="mode5">Mode 5</option>
+      </select>
+      <input name="api_gpio" type="submit" value="buzzer">
+  </form>
+
+</body>
+</html>
